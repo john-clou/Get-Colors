@@ -5,7 +5,7 @@ let a = 0,
   c = 0,
   t;
 let theCircul = document.querySelector(".circul"),
-  body = document.querySelector("body");
+  lay = document.querySelector(".lay");
 
 function newValues() {
   a = newRgb();
@@ -17,10 +17,11 @@ theCircul.onclick = function () {
   newValues();
   theCircul.style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
 };
-body.onclick = function (e) {
+lay.onclick = function (e) {
   t = e.target;
-  if (t.textContent) {
+
+  if (t.innerHTML) {
     newValues();
-    body.style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
+    this.style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
   }
 };
